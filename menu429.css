@@ -1,0 +1,38 @@
+/*Sets the main container to be aliged to the middle*/
+#container 
+{
+	background-color:#54AA2A; 
+	width:948px; 
+	height:100%; 
+	margin-left:auto; 
+	margin-right:auto;
+}
+#header
+{
+	background-color:orange;
+	position:relative;
+	height:332px;
+}
+/*Container for the left pane and body*/
+#bodyout
+{
+	position:relative;
+	height:53.631%;
+}
+/*Left pane relative to bodyout div*/
+#leftpane
+{
+	position:relative;
+	background-color:red;
+	margin-right:auto;
+	width:331px;
+	height:100%;
+}
+/*This body div needs fixing: it needs to be contained in bodyout div fixed on the right*/
+#body
+{
+	position:relative;
+	margin-left:auto;
+	width:617px;
+	height:100%;
+}
