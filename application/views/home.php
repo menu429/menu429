@@ -16,6 +16,7 @@
 		<div id="menu" style="width:331px;float:left;text-align: center;">
 			<?php
 				echo anchor('site/create', 'Create', 'title="Create"');
+				//echo anchor('site/recipe', '<br />Recipe', 'title="Recipe"');
 			?><br />
 			<b>Browse</b><br />
 		</div>
@@ -23,7 +24,7 @@
 		<div id="content" style="width:617px;float:left;">
 			<?php
 				foreach ($records as $row) {
-					echo '<h2>'.$row->recipe_name.'</h2>';
+					echo anchor('site/' . $row->recipe_id, '<h2>'.$row->recipe_name.'</h2>');
 					echo '<h4><i>Created By: '.$row->creator_name.'</i></h4>';
 					echo $row->steps.'<hr />';
 				}

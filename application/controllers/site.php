@@ -15,5 +15,16 @@
 			
 			redirect('site');
 		}
+		
+		function recipe()
+		{
+			$this->load->model('site_model');
+			/*$data['row'] = $this->site_model->getLast();
+			$this->load->view('recipe', $data);*/
+			
+			$data['row'] = $this->site_model->();
+		}
+		
+
 	}
 ?>
