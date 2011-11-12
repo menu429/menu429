@@ -3,7 +3,7 @@
 class Site_model extends CI_Model {
 	
 	function getAll() {
-		$q = $this->db->get('recipes');
+		$q = $this->db->get('recipes', 5);
 		
 		if($q->num_rows() > 0) {
 			foreach ($q->result() as $row) {

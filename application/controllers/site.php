@@ -9,5 +9,11 @@
 		function create(){
 			$this->load->view('create');
 		}
+		
+		function insert(){
+			$this->db->insert('recipes', $_POST);
+			
+			redirect('site');
+		}
 	}
 ?>
