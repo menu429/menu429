@@ -22,7 +22,7 @@
 
 		<div id="content" style="width:617px;float:left;">
 			<?php
-				foreach ($row as $r)
+				foreach ($rows->result() as $r)
 				{
 					echo '<div id="recipe_name">' . $r->recipe_name . '</div>';
 					echo '<div id="recipe_description">' . $r->recipe_description . '</div>';

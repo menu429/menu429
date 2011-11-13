@@ -18,13 +18,9 @@
 		
 		function recipe()
 		{
-			$this->load->model('site_model');
-			/*$data['row'] = $this->site_model->getLast();
-			$this->load->view('recipe', $data);*/
-			
-			$data['row'] = $this->site_model->();
+			$this->db->where('recipe_id', $this->uri->segment(3));
+			$data['rows'] = $this->db->get('recipes');
+			$this->load->view('recipe', $data);
 		}
-		
-
 	}
 ?>

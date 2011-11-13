@@ -24,7 +24,7 @@
 		<div id="content" style="width:617px;float:left;">
 			<?php
 				foreach ($records as $row) {
-					echo anchor('site/' . $row->recipe_id, '<h2>'.$row->recipe_name.'</h2>');
+					echo anchor('site/recipe/' . $row->recipe_id, '<h2>'.$row->recipe_name.'</h2>');
 					echo '<h4><i>Created By: '.$row->creator_name.'</i></h4>';
 					echo $row->steps.'<hr />';
 				}
