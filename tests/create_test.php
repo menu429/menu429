@@ -4,7 +4,7 @@ require_once('simpletest/web_tester.php');
 
 class TestOfCreating extends WebTestCase
 {
-	function testCreatingNewRecipeToDatabase()
+	function testCreatePageRedirection() //Redirection to homepage after filling create form
 	{
 		$this->get('http://localhost/menu429/index.php/site/create');
 		$this->setField('recipe_name', 'hamburger');

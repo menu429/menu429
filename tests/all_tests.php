@@ -3,9 +3,9 @@ require_once('simpletest/autorun.php');
 
 class AllTests extends TestSuite 
 {
-	function AllTests()
+	function __construct()
 	{	
-		$this->TestSuite('All tests');
+		parent::__construct();
 		$this->addFile('create_test.php');
 	}
 }
