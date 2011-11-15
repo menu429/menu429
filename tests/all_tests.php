@@ -1,4 +1,4 @@
-/<?php
+<?php
 require_once('simpletest/autorun.php');
 
 class AllTestsSuite extends TestSuite
