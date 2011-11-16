@@ -22,5 +22,10 @@
 			$data['rows'] = $this->db->get('recipes');
 			$this->load->view('recipe', $data);
 		}
+		
+		function filter()
+		{
+			$this->load->view('filter');
+		}
 	}
 ?>

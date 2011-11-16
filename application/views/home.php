@@ -16,7 +16,7 @@
 		<div id="menu" style="width:331px;float:left;text-align: center;">
 			<?php
 				echo anchor('site/create', 'Create', 'title="Create"');
-				//echo anchor('site/recipe', '<br />Recipe', 'title="Recipe"');
+				echo anchor('site/filter', '<br />Browse', 'title="Browse"');
 			?><br />
 			<b>Browse</b><br />
 		</div>
