@@ -9,4 +9,17 @@ class TestOfCreatePage extends UnitTestCase
 		
 	}
 }
+/*class UnitTest extends CI_Controller
+{
+	function UnitTest()
+	{
+		parent::Controller();
+		$this->load->library('unit_test');
+	}
+	
+	function index()
+	{
+		$this->load->model('
+	}
+}*/
 ?>

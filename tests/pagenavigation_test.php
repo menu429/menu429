@@ -4,9 +4,11 @@ require_once('simpletest/web_tester.php');
 
 class TestOfPageNavigation extends WebTestCase
 {
+	//Create page testing
 	function testHomePageToCreatePage()	//Test clicking create button from home page
 	{
 		$this->get('http://localhost/menu429/');
+		$this->assertLink('Create', 'http://localhost/menu429/index.php/site/create', 'Create URI is found');
 		$this->click('Create');
 		$this->assertTitle('Create Your Recipe');
 	}
@@ -24,6 +26,15 @@ class TestOfPageNavigation extends WebTestCase
 		//$this->click('Hard');
 		$this->clickSubmit("Create Recipe");
 		$this->assertTitle('Home Page');
+	}
+	
+	//Home page testing
+	function testHomePageElements()
+	{
+		$this->get('http://localhost/menu429/index.php/site');
+		$this->assertTitle('Home Page');
+		$this->assertClickable('Create');
+		$this->assertClickable('Browse');
 	}
 }
 ?>
