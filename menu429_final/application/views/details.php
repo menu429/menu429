@@ -29,5 +29,4 @@ else {
 }
 
 $this->load->view('footer');
-
-# End of file /views/details.php
+?>

@@ -33,7 +33,7 @@
 	<p>Ingredients: <textarea name="ingredients" rows="15" cols="75"><?php echo set_value('ingredients'); ?></textarea></p>
 	<p>Directions: <textarea name="directions" rows="15" cols="75"><?php echo set_value('directions'); ?></textarea></p>
 	<p>Image: <?php echo form_upload('userfile'); ?></p>
- 
+	
 <input type="submit" value="Submit Recipe" />
 
 </form>

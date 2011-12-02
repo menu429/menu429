@@ -1,8 +1,8 @@
 			
 			<div id="sidebar">
-				<p class="sidebar_bttn"><a href="<?php echo site_url('main/create'); ?>">Submit Recipe</a></p>
-				<p class="sidebar_bttn"><a href="<?php echo site_url('main/browse'); ?>">Browse</a></p>
-				<h2>Categories</h2>
+				<p class="sidebar_bttn"><a href="<?php echo site_url('main/create'); ?>">Share Your Recipe</a></p>
+				<p class="sidebar_bttn"><a href="<?php echo site_url('main/browse'); ?>">Browse Recipes</a></p>
+				<!--<h2>Categories</h2>
 				<ul>
 					<li><a href="<?php echo site_url('main/recipes')?>"><span>&raquo;</span> All</a></li>
 					<?php
@@ -14,7 +14,7 @@
 							}
 						}
 					?>
-				</ul>
+				</ul>-->
 			</div>
 			
 			<div id="content">

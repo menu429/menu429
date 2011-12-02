@@ -20,7 +20,7 @@
 				$q = $this->db->get_where('recipes', $options);
 			}else{
 				$this->db->order_by('id', 'desc');
-				$q = $this->db->get('recipes');
+				$q = $this->db->get('recipes', 9);
 			}
 			
 			if($q->num_rows() > 0){
@@ -34,6 +34,10 @@
 		}
 		
 		function get_details($id){
+			$this->form_validation->set_rules('category', 'Category', 'required|max_length[30]');
+		    $this->form_validation->set_rules('time_estimated', 'Time Esimated', 'required|max_length[30]');
+			$this->form_validation->set_rules('difficulty', 'Difficulty', 'required|max_length[30]');
+			
 			$data = array();
 			
 			$options = array('id' => $id);
@@ -42,6 +46,44 @@
 			if($q->num_rows() > 0){
 				foreach($q->result_array() as $row){
 					$data = $row;
+				}
+			}
+			
+			$q->free_result();
+			return $data;
+		}
+		
+		function get_filter_result(){
+			$data = array();
+			
+			$category = $this->input->post('category');
+			$estimated_time = $this->input->post('estimated_time');
+			$difficulty = $this->input->post('difficulty');
+			
+			if(empty($category) && !empty($estimated_time) && !empty($difficulty)){
+				$options = "estimated_time = '".$estimated_time."' AND difficulty = '".$difficulty."';";
+			}
+			else if(!empty($category) && empty($estimated_time) && !empty($difficulty)){
+				$options = "category = '".$category."' AND difficulty = '".$difficulty."';";
+			}else if(!empty($category) && !empty($estimated_time) && empty($difficulty)){
+				$options = "category = '".$category."' AND estimated_time = '".$estimated_time."';";
+			}else if(empty($category) && empty($estimated_time) && !empty($difficulty)){
+				$options = "difficulty = '".$difficulty."';";
+			}else if(empty($category) && !empty($estimated_time) && empty($difficulty)){
+					$options = "estimated_time = '".$estimated_time."';";
+			}else if(!empty($category) && empty($estimated_time) && empty($difficulty)){
+					$options = "category = '".$category."';";
+			}else if(!empty($category) && !empty($estimated_time) && !empty($difficulty)){
+					$options = "category = '".$category."' AND estimated_time = '".$estimated_time."' AND difficulty = '".$difficulty."';";
+			}else if(empty($category) && empty($estimated_time) && empty($difficulty)){
+							$options = "category = '".$category."' AND estimated_time = '".$estimated_time."' AND difficulty = '".$difficulty."';";
+			}
+			
+			$q = $this->db->get_where('recipes', $options);
+			
+			if($q->num_rows() > 0){
+				foreach($q->result_array() as $row){
+					$data[] = $row;
 				}
 			}
 			
@@ -81,7 +123,7 @@
 		    $this->form_validation->set_rules('description', 'Description', 'required|htmlspecialchars');
 			$this->form_validation->set_rules('creator', 'Created by', 'required|htmlspecialchars');
 		    $this->form_validation->set_rules('category', 'Category', 'required|max_length[30]');
-		    //--$this->form_validation->set_rules('time_estimated', 'Time Esimated', 'required|max_length[30]');
+		    $this->form_validation->set_rules('estimated_time', 'Time Esimated', 'required|max_length[30]');
 			$this->form_validation->set_rules('difficulty', 'Difficulty', 'required|max_length[30]');
 			$this->form_validation->set_rules('ingredients', 'Ingredients', 'required|htmlspecialchars');
 			$this->form_validation->set_rules('directions', 'Directions', 'required|htmlspecialchars');

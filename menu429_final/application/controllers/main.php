@@ -27,6 +27,11 @@ class Main extends CI_Controller{
 		$this->load->view('details', $data);
 	}
 	
+	function browse(){
+		$data['filter_result'] = $this->mMenu->get_filter_result();
+		$this->load->view('browse', $data);
+	}
+	
 	function create(){
 		$this->load->view('create');
 	}
@@ -35,6 +40,7 @@ class Main extends CI_Controller{
 		$image_url = $this->mMenu->do_upload();
 		$this->mMenu->submit_recipe($image_url);
 	}
+	
 }
 
 ?>

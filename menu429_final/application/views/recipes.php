@@ -6,7 +6,7 @@
 		if($category){
 			echo '<h2>'.$category['name'].' Recipes <cite>'.count($recipes).'</cite></h2>';
 		}else{
-			echo '<h2> All Recipes <cite>'.count($recipes).'</cite></h2>';
+			echo '<h2> Recently Submitted <cite>'.count($recipes).'</cite></h2>';
 		}
 		echo '<ul id="recipes">';
 		$counter = 0;
@@ -17,14 +17,17 @@
 			<li<?php if($counter == 2) {echo ' class="alt"'; $counter = 0;}?>>
 			<?php $segments = array('main','details', $row['id'] ); ?>
 			
-			<a href="<?php echo site_url($segments); ?>">
-				<span class="title"><?php echo $row['title']; ?></span>
-				<span class="meta"><strong>|<?php echo $row['difficulty']; ?></strong>|</span>
+			<a href="<?php echo site_url($segments); ?>" class="dish">
+				<img src="<?php echo $row['image_url']; ?>" />
+				<div>
+				<p><span class="title"><?php echo $row['title']; ?></span></p>
+				<!--<p><span class="meta"><strong><?php echo $row['difficulty']; ?></strong></span></p>
 				<?php
 					$posted = $row['posted'];
 					$current = time();
 				?>
-				<span class="posted"><cite><?php echo $this->timeword->convert($posted, $current); ?> ago</cite></span>
+				<p><span class="posted"><cite><?php echo $this->timeword->convert($posted, $current); ?> ago</cite></span></p>-->
+				</div>
 			</a>
 			</li>
 			<?php

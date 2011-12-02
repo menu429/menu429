@@ -130,9 +130,32 @@ h4 {
     margin: 25px 0 5px 0;
 }
 
-ul#recipes li{
-	list-style: none;
-	margin: 0;
+#recipes {
+	float:left;
+	list-style:none;
+	padding:0;
+}
+#recipes li {
+	display:inline;
+}
+
+.dish {
+	display:block;
+	float:left;
+	width:168px;
+	height:180px;
+	margin:10px;
+	border:1px solid #494949;
+	text-align:center;
+	text-decoration:none;
+	color: #000;
+	overflow:hidden;
+}
+.dish img {
+	border:0;
+	margin:10px auto;
+	width:100px;
+	height:100px;
 }
 
 #footer {
